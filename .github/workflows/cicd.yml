@@ -18,6 +18,6 @@ jobs:
       - name: Login to dockerhub
         run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Build docker image
-        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/hello-world-spring-boot-app:${{ steps.commit_sha.outputs.SHA }} .
+        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/hello-world-spring-boot-app:${{ github.sha }} .
       - name: Push docker image to dockerhub
         run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/hello-world-spring-boot-app:${{ github.sha }}
