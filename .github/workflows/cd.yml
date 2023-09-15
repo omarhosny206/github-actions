@@ -12,8 +12,6 @@ jobs:
     env:
       DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
       - name: Stop running containers
         run: |
           if [ -n "$(docker ps -q --filter status=running)" ]; then
@@ -23,5 +21,5 @@ jobs:
         run: docker rmi $(docker images -q)
       - name: Pull docker image
         run: docker pull $DOCKERHUB_USERNAME/hello-world-spring-boot-app:${{ github.sha }}
-      - name: Run Docker Container
+      - name: Run docker container
         run: docker run -d -p 8080:8080 --name spring-boot-app $DOCKERHUB_USERNAME/hello-world-spring-boot-app:${{ github.sha }}
