@@ -12,6 +12,8 @@ jobs:
     env:
       DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
       - name: Stop running containers
         run: |
           docker stop $(docker ps -a -q)
