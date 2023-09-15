@@ -16,8 +16,9 @@ jobs:
         uses: actions/checkout@v3
       - name: Stop running containers
         run: |
-          docker stop $(docker ps -q)
-          docker rm $(docker ps -a -q)
+          if [ -n "$(docker ps -q --filter status=running)" ]; then
+            docker rm -f $(docker ps -q --filter status=running)
+          fi
       - name: Delete existing docker images
         run: docker rmi $(docker images -q)
       - name: Pull docker image
