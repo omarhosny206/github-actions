@@ -1,0 +1,24 @@
+name: CD Pipeline/Workflow
+
+on:
+  workflow_run:
+    workflows: ["CI Pipeline/Workflow"]
+    types:
+      - completed
+
+jobs:
+  deploy-container:
+    runs-on: self-hosted  # Replace with the label of your self-hosted runner
+    env:
+      DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+    steps:
+      - name: Stop running containers
+        run: |
+          docker stop $(docker ps -a -q)
+          docker rm $(docker ps -a -q)
+      - name: Delete existing docker images
+        run: docker rmi $(docker images -q)
+      - name: Pull docker image
+        run: docker pull $DOCKERHUB_USERNAME/hello-world-spring-boot-app:${{ github.sha }}
+      - name: Run Docker Container
+        run: docker run -d -p 8080:8080 --name spring-boot-app $DOCKERHUB_USERNAME/hello-world-spring-boot-app:${{ github.sha }}
