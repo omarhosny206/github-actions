@@ -46,4 +46,10 @@ Environment="RUNNER_ALLOW_RUNASROOT=1"  # Add this line if required
 
 [Install]
 WantedBy=multi-user.target
+# End of file's content
+
+# then run
+sudo systemctl enable github-runner
+sudo systemctl start github-runner
+sudo systemctl status github-runner.service
 ```
