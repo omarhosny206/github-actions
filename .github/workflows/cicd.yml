@@ -28,7 +28,7 @@ jobs:
       DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
     needs: ci-build-and-push-docker-image
     steps:
-      - name: Stop running containers
+      - name: Stop running docker containers
         run: |
           if [ -n "$(docker ps -q --filter status=running)" ]; then
             docker rm -f $(docker ps -q --filter status=running)
