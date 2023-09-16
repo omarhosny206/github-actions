@@ -1,21 +1,26 @@
-# GitHub Actions
+# GitHub Actions 🪐
 
-## Description
+## Description ✍
 ### This is a Spring Boot Rest API. I'm trying here to run a _CI/CD_ pipeline starting from building the docker image till deploying the container to _AWS EC2_ instance every time I push updates to the master branch. Here are the steps:
-## _Continuous Integration (CI):_
+
+## _Continuous Integration (CI)_ ✅
 - Checkout code.
 - Login to dockerhub.
 - Build docker image that contains the Spring Boot Rest API and tag it with the commit sha.
 - Push the docker image to dockerhub.
-## _Continuous Deployment (CD):_
+
+## _Continuous Deployment (CD)_ 🚀
 - Stop running docker containers.
 - Delete existing docker images.
 - Pull docker image that contains the Spring Boot Rest API.
 - Run docker container and expose port _8080_.
 
+###
+###
+![image](https://github.com/omarhosny206/github-actions/assets/58389695/638fdddb-9509-4418-bb32-d3b2bb728322)
 
-## Getting Started
-### Setup AWS EC2 Runner
+## Getting Started ▶️
+### Setup AWS EC2 Runner ⚙️
 ```text
 visit https://github.com/<username>/<repo-name>/settings/actions/runners
 click "New self-hosted runner"
@@ -23,7 +28,7 @@ choose runner image & architecture from the options macOS, Linux and Windows.
 follow the commands
 ```
 
-### AWS EC2 Runner Service
+### AWS EC2 Runner Service ⚙️
 ```shell
 # to enable the ec2 instance to listen to the jobs triggered by the workflow.
 sudo micro /etc/systemd/system/github-runner.service
@@ -49,7 +54,7 @@ sudo systemctl start github-runner
 sudo systemctl status github-runner.service
 ```
 
-## Contribution
+## Contribution 🤝
 #### If you're interested in contributing to this project, please follow these guidelines:
 1. Fork the repository
 2. Make your changes
