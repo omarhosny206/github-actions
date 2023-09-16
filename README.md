@@ -48,3 +48,9 @@ sudo systemctl enable github-runner
 sudo systemctl start github-runner
 sudo systemctl status github-runner.service
 ```
+
+## Contribution
+#### If you're interested in contributing to this project, please follow these guidelines:
+1. Fork the repository
+2. Make your changes
+3. Submit a Pull Request
