@@ -1,12 +1,13 @@
 # GitHub Actions
 
-## This is a Spring Boot Rest API. I'm trying here to run a _CI/CD_ pipeline starting from building the docker image till deploying the container to _AWS EC2_ instance every time I push updates to the master branch. Here are the steps:
-### _Continuous Integration (CI):_
+## Description
+### This is a Spring Boot Rest API. I'm trying here to run a _CI/CD_ pipeline starting from building the docker image till deploying the container to _AWS EC2_ instance every time I push updates to the master branch. Here are the steps:
+## _Continuous Integration (CI):_
 - Checkout code.
 - Login to dockerhub.
 - Build docker image that contains the Spring Boot Rest API and tag it with the commit sha.
 - Push the docker image to dockerhub.
-### _Continuous Deployment (CD):_
+## _Continuous Deployment (CD):_
 - Stop running docker containers.
 - Delete existing docker images.
 - Pull docker image that contains the Spring Boot Rest API.
