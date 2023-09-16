@@ -17,6 +17,9 @@
 ### Setup AWS EC2 Runner
 ```text
 visit https://github.com/<username>/<repo-name>/settings/actions/runners
+click "New self-hosted runner"
+choose runner image & architecture from the options macOS, Linux and Windows.
+follow the commands
 ```
 
 ### AWS EC2 Runner Service
