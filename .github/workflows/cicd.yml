@@ -34,7 +34,10 @@ jobs:
             docker rm -f $(docker ps -q --filter status=running)
           fi
       - name: Delete existing docker images
-        run: docker rmi $(docker images -q)
+        run: |
+          if [ -n "$(docker images -q)" ]; then
+            docker rmi $(docker images -q)
+          fi
       - name: Pull docker image
         run: docker pull $DOCKERHUB_USERNAME/hello-world-spring-boot-app:${{ github.sha }}
       - name: Run docker container
