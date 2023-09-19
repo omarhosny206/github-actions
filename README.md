@@ -28,7 +28,7 @@ choose runner image & architecture from the options macOS, Linux and Windows.
 follow the commands
 ```
 
-### AWS EC2 Runner Service ⚙️
+### Setup AWS EC2 Runner Service ⚙️
 ```shell
 # to enable the ec2 instance to listen to the jobs triggered by the workflow.
 sudo micro /etc/systemd/system/github-runner.service
