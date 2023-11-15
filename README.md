@@ -39,6 +39,7 @@ follow the commands
 ### Setup AWS EC2 Ubuntu Runner Service ⚙️
 ```shell
 # to enable the ec2 instance to listen to the jobs triggered by the workflow.
+# micro is a terminal-text-editor, to install it, run this command "sudo apt install micro"
 sudo micro /etc/systemd/system/github-runner.service
 
 # Content of the file
