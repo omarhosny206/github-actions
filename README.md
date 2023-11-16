@@ -33,7 +33,7 @@
 visit https://github.com/<username>/<repo-name>/settings/actions/runners
 click "New self-hosted runner"
 choose runner image & architecture from the options macOS, Linux and Windows.
-follow the commands
+follow the commands (with the normal user "ubuntu" and not the root user)
 ```
 
 ### Setup AWS EC2 Ubuntu Runner Service ⚙️
