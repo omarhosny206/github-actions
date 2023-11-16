@@ -42,3 +42,5 @@ jobs:
         run: docker pull $DOCKERHUB_USERNAME/hello-world-spring-boot-app:${{ github.sha }}
       - name: Run docker container
         run: docker run -d -p 8080:8080 --name spring-boot-app $DOCKERHUB_USERNAME/hello-world-spring-boot-app:${{ github.sha }}
+        name: Test the hello-world endpoint
+        run: curl -X GET localhost:8080/api/hello-world/
