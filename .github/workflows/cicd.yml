@@ -28,16 +28,10 @@ jobs:
       DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
     needs: ci-build-and-push-docker-image
     steps:
-      - name: Stop running docker containers
-        run: |
-          if [ -n "$(docker ps -q --filter status=running)" ]; then
-            docker rm -f $(docker ps -q --filter status=running)
-          fi
+      - name: Remove existing docker containers
+        run: docker rm -f $(docker ps -aq) || true
       - name: Delete existing docker images
-        run: |
-          if [ -n "$(docker images -q)" ]; then
-            docker rmi $(docker images -q)
-          fi
+        run: docker rmi -f $(docker images -q) || true
       - name: Pull docker image
         run: docker pull $DOCKERHUB_USERNAME/hello-world-spring-boot-app:${{ github.sha }}
       - name: Run docker container
