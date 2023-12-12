@@ -1,5 +1,5 @@
 # Stage 1: Build the application
-FROM amazoncorretto:17 as build
+FROM amazoncorretto:17-alpine as build
 
 WORKDIR /app
 
