@@ -14,7 +14,7 @@ COPY ./src ./src
 RUN ./mvnw clean package -DskipTests
 
 # Stage 2: Create a runtime container
-FROM amazoncorretto:17 as runtime
+FROM amazoncorretto:17-alpine as runtime
 
 WORKDIR /app
 
