@@ -26,8 +26,11 @@
 ###
 ![image](https://github.com/omarhosny206/github-actions/assets/58389695/638fdddb-9509-4418-bb32-d3b2bb728322)
 
-## Getting Started ▶️
-### Setup AWS EC2 Ubuntu Runner ⚙️
+## Getting Started ▶️ 
+***NOTE***: you can either setup it manually or simply run ```install-runner.sh``` file to create a docker container that acts as a runner.
+
+
+### Manually Setup AWS EC2 Ubuntu Runner ⚙️
 ```text
 visit https://github.com/<username>/<repo-name>/settings/actions/runners
 click "New self-hosted runner"
@@ -35,7 +38,7 @@ choose runner image & architecture from the options macOS, Linux and Windows.
 follow the commands (with the normal user **"ubuntu"** and not the root user)
 ```
 
-### Setup AWS EC2 Ubuntu Runner Service ⚙️
+### Manually Setup AWS EC2 Ubuntu Runner Service ⚙️
 ```shell
 # do the following (with the normal user **"ubuntu"** and not the root user) to enable the ec2 instance to listen to the jobs triggered by the workflow.
 # micro is a terminal-text-editor, to install it, run this command "sudo apt install micro"
