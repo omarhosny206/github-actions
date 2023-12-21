@@ -1,6 +1,8 @@
-docker run -d --name <runner-container-name> \
-    -e RUNNER_NAME=<runner-name> \
-    -e GITHUB_ACCESS_TOKEN=<github-access-token> \
-    -e RUNNER_REPOSITORY_URL=https://github.com/<username>/<repo-name> \
+docker run -d --name <container_name> \
+    -e GITHUB_USERNAME=<github_username> \
+    -e GITHUB_REPOSITORY=<github_repo_name> \
+    -e GITHUB_PERSONAL_ACCESS_TOKEN=<github_pat> \
+    -e RUNNER_NAME=<runner_name> \
     -v /var/run/docker.sock:/var/run/docker.sock \
-    tcardonne/github-runner
+    -v /usr/bin/docker:/usr/bin/docker \
+    omarhosny102/github-runner
