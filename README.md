@@ -28,7 +28,7 @@
 ![image](https://github.com/omarhosny206/github-actions/assets/58389695/638fdddb-9509-4418-bb32-d3b2bb728322)
 
 ## Getting Started ▶️ 
-***NOTE***: you can either setup it manually or simply run [```install-runner.sh```](./install-runner.sh) file to create a docker container that acts as a runner.
+***NOTE***: you can either setup it manually or simply run [```setup-github-actions-runner.sh```](./setup-github-actions-runner.sh) file to create a docker container that acts as a runner.
 
 
 ### Manually Setup AWS EC2 Ubuntu Runner ⚙️
